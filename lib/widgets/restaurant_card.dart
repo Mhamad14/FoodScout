@@ -137,13 +137,12 @@ class RestaurantCard extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded( // Use Expanded to push contents to fill space if needed, or just standard column
-              child: Padding(
-                padding: const EdgeInsets.all(10), // Reduced from 12
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Distribute tighter
-                  children: [
+            Padding(
+              padding: const EdgeInsets.all(10), // Reduced from 12
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
                     Text(
                       restaurant.name,
                       style: theme.textTheme.titleSmall?.copyWith(
@@ -208,7 +207,6 @@ class RestaurantCard extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
             ),
           ],
         ),

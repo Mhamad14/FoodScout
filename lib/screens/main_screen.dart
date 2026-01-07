@@ -92,6 +92,13 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     _loadRestaurants();
   }
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Reload restaurants when navigating back to favorites screen
+    _loadRestaurants();
+  }
+
   Future<void> _loadRestaurants() async {
     try {
       final restaurants = await _apiService.fetchRestaurants();
